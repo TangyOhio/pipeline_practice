@@ -14,7 +14,7 @@ const ButtonsContainer = () => {
       {currentWord}
       <span className="buttons">
         {WORDS.map(word => {
-          return <Button word={word} changeWord={setCurrentWord} />;
+          return <Button key={word} word={word} changeWord={setCurrentWord} />;
         })}
       </span>
     </>
