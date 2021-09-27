@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import Button from "./Button";
 import "./buttons.css";
 
-const WORDS = ["French", "Toast", "Chiken", "Nuggies"];
-
-const ButtonsContainer = () => {
+const ButtonsContainer = ({ words }) => {
   const [currentWord, setCurrentWord] = useState(
     "Click a button to change the word"
   );
@@ -13,7 +11,7 @@ const ButtonsContainer = () => {
     <>
       {currentWord}
       <span className="buttons">
-        {WORDS.map(word => {
+        {words.map(word => {
           return <Button key={word} word={word} changeWord={setCurrentWord} />;
         })}
       </span>

@@ -2,18 +2,20 @@ import ButtonsContainer from "../ButtonsContainer";
 import { render, screen, fireEvent } from "@testing-library/react";
 
 describe("ButtonsContainer", () => {
-  test("starts in default state", () => {
-    render(<ButtonsContainer />);
+  const words = ["French", "Toast", "Chiken", "Nuggies"];
+
+  test("renders", () => {
+    render(<ButtonsContainer words={words} />);
 
     expect(screen.getByText(/change the word/i)).toBeDefined();
-    expect(screen.getByText("French")).toBeDefined();
-    expect(screen.getByText("Toast")).toBeDefined();
-    expect(screen.getByText("Chiken")).toBeDefined();
-    expect(screen.getByText("Nuggies")).toBeDefined();
+    expect(screen.getByText(words[0])).toBeDefined();
+    expect(screen.getByText(words[1])).toBeDefined();
+    expect(screen.getByText(words[2])).toBeDefined();
+    expect(screen.getByText(words[3])).toBeDefined();
   });
 
   test("changes state", () => {
-    render(<ButtonsContainer />);
+    render(<ButtonsContainer words={words} />);
 
     expect(screen.getByText(/change the word/i)).toBeDefined();
 
