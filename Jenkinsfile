@@ -1,5 +1,5 @@
 pipeline {
-    agent codebuild
+    agent any
     stages {
         stage('Install') {
             steps {
