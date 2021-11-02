@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Install') {
+        stage('Installl') {
             steps {
                 sh 'yarn'
             }
